@@ -1,0 +1,164 @@
+/* This CSS file styles the sustainable travel website */
+
+/* Basic reset for margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the body */
+body {
+  font-family: Arial, sans-serif; /* Sets a clean font for the website */
+  line-height: 1.6; /* Increases line height for better readability */
+}
+
+/* Navbar styles */
+nav {
+  background-color: #138f5d; /* Green background for the navbar */
+  padding: 10px; /* Adds padding around the navbar */
+}
+
+nav ul {
+  list-style-type: none; /* Removes bullet points from the list */
+  display: flex; /* Displays the list items in a row */
+  justify-content: space-around; /* Spaces out the items evenly */
+}
+
+nav ul li {
+  margin: 0 15px; /* Adds margin between the list items */
+}
+
+nav ul li a {
+  color: white; /* White text color for the links */
+  text-decoration: none; /* Removes underline from links */
+}
+
+/* Add a hover effect for navigation links */
+nav ul li a:hover {
+  color: #ffd700;            /* Gold text color on hover */
+  transition: background 0.2s, color 0.2s; /* Smooth transition */
+}
+
+/* Hero section styles */
+.hero {
+  text-align: center; /* Centers the text in the hero section */
+  padding: 50px 20px; /* Adds padding around the hero section */
+  background-image: url('img/hero-image.png'); /* Background image for the hero section */
+  background-size: cover; /* Ensures the image covers the entire section */
+  opacity: 70%;
+  color: white; /* White text color for the hero section */
+}
+
+.hero h1 {
+  font-size: 2.5em; /* Larger font size for the headline */
+}
+
+.hero p {
+  margin: 20px 0; /* Adds margin above and below the paragraph */
+}
+
+.hero .cta-button {
+  background-color: #FF5733; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Padding inside the button */
+  border: none; /* Removes border from the button */
+  border-radius: 5px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  text-decoration: none; /* Removes underline from button text */
+}
+
+/* Add a hover effect for the "Learn More" button */
+.hero .cta-button:hover {
+  background-color: #d94315; /* Darker orange on hover */
+  color: #fffbe7;            /* Slightly off-white text on hover */
+  transition: background 0.2s, color 0.2s; /* Smooth transition */
+}
+
+/* Main section styles */
+.main-section {
+  background: #f4f4f4; /* Light background */
+  margin: 30px auto;   /* Space above and below */
+  padding: 30px 15px;  /* Padding inside the section */
+  width: 90%;          /* Make the section take up about 90% of the page width */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center;  /* Center text */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07); /* Soft shadow */
+}
+
+/* Simple cards for destinations */
+.simple-cards {
+  display: flex;              /* Arrange cards in a row */
+  justify-content: center;    /* Center the cards */
+  gap: 15px;                  /* Space between cards */
+  margin-top: 20px;           /* Space above cards */
+}
+
+.simple-card {
+  background: #e0f7e9;        /* Light green background */
+  border-radius: 8px;         /* Rounded corners */
+  padding: 15px 10px;         /* Padding inside the card */
+  width: 200px;               /* Increased width for wider cards */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* Soft shadow */
+  text-align: center;         /* Center text */
+}
+
+/* Add a colored border behind the image */
+.card-image-border {
+  background: #b2dfdb;        /* Teal colored border */
+  padding: 6px;               /* Space for the border */
+  border-radius: 8px;         /* Rounded corners for the border */
+  display: inline-block;      /* Shrink to fit the image */
+  margin-bottom: 10px;        /* Space below the image */
+}
+
+.card-image {
+  width: 100px;               /* Set image width */
+  height: 100px;              /* Set image height */
+  object-fit: cover;          /* Crop image to fit */
+  border-radius: 6px;         /* Rounded corners for the image */
+  display: block;             /* Remove inline gap */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column; /* Stacks the navbar items vertically on small screens */
+    background-color: #138f5d; /* Keep background color */
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  nav ul.active {
+    display: flex; /* Show nav links when active */
+  }
+
+  /* Make nav links taller and add spacing for mobile */
+  nav ul li {
+    margin: 0; /* Remove margin so buttons touch each other */
+  }
+
+  nav ul li a {
+    padding: 16px 0; /* Taller clickable area */
+    display: block;  /* Make the link fill the li */
+    width: 100%;     /* Make the link fill the width */
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+  }
+
+  /* Alternate nav button colors for better distinction */
+  nav ul li:nth-child(odd) a {
+    background-color: #138f5d; /* Original color */
+  }
+  nav ul li:nth-child(even) a {
+    background-color: #13a46a; /* Slightly lighter blue */
+  }
+
+  .hero h1 {
+    font-size: 2em; /* Adjusts font size for smaller screens */
+  }
+
+  .simple-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
