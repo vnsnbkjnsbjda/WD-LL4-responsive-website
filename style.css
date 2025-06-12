@@ -92,15 +92,17 @@ nav ul li a:hover {
   justify-content: center;    /* Center the cards */
   gap: 15px;                  /* Space between cards */
   margin-top: 20px;           /* Space above cards */
+  flex-wrap: wrap;            /* Allow cards to wrap to next line if needed */
 }
 
 .simple-card {
   background: #e0f7e9;        /* Light green background */
   border-radius: 8px;         /* Rounded corners */
   padding: 15px 10px;         /* Padding inside the card */
-  width: 200px;               /* Increased width for wider cards */
+  width: 200px;               /* Card width */
   box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* Soft shadow */
   text-align: center;         /* Center text */
+  margin-bottom: 15px;        /* Space below each card for wrapping */
 }
 
 /* Add a colored border behind the image */
@@ -114,7 +116,8 @@ nav ul li a:hover {
 
 .card-image {
   width: 100px;               /* Set image width */
-  height: 100px;              /* Set image height */
+  max-width: 100%;            /* Make image responsive */
+  height: auto;               /* Keep image aspect ratio */
   object-fit: cover;          /* Crop image to fit */
   border-radius: 6px;         /* Rounded corners for the image */
   display: block;             /* Remove inline gap */
@@ -158,7 +161,28 @@ nav ul li a:hover {
   }
 
   .simple-cards {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;    /* Center cards */
+  }
+
+  .simple-card {
+    width: 90%; /* Make cards take up most of the screen width */
+    max-width: 350px; /* Limit max width for readability */
+  }
+}
+
+/* Responsive styles for screens wider than 600px */
+@media (min-width: 600px) {
+  .main-section {
+    width: 90%;         /* Section takes up 90% of the page width */
+    max-width: 900px;   /* Limit max width for large screens */
+  }
+  .simple-cards {
+    flex-direction: row; /* Cards in a row */
+    align-items: flex-start;
+  }
+  .simple-card {
+    width: 200px;       /* Fixed width for cards on larger screens */
+    max-width: 100%;
   }
 }
